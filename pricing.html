@@ -3,65 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing Plans | Variant Media Group</title>
+    <title>Pricing | Variant Media Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .card-popular { border: 2px solid #3b82f6; box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); }
+        .mobile-menu-open { transform: translateX(0) !important; }
     </style>
 </head>
-<body class="text-gray-100 overflow-x-hidden">
+<body>
 
-    <nav class="fixed w-full z-50 glass py-4">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav class="fixed w-full z-50 glass py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="text-2xl font-800 tracking-tighter">VARIANT<span class="text-blue-500">MEDIA</span></a>
+            <button id="menu-btn" class="md:hidden text-blue-500"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
             <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-widest">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-                <a href="about.html" class="hover:text-blue-400 transition">About</a>
-                <a href="pricing.html" class="text-blue-400 transition">Pricing</a>
-                <a href="contact.html" class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-700 transition">Book a Call</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="pricing.html" class="text-blue-400">Pricing</a>
+                <a href="contact.html" class="bg-blue-600 px-5 py-2 rounded-full">Book a Call</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-40 pb-20 px-6">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h1 class="text-5xl font-800 mb-4">Pricing Tailored for <span class="text-blue-500">Growth.</span></h1>
-            <p class="text-gray-400 text-lg">Transparent investment for high-performance assets.</p>
-        </div>
+    <div id="mobile-sidebar" class="fixed inset-0 bg-slate-900 z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="close-btn" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Book a Call</a>
+    </div>
 
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-            <div class="glass p-10 rounded-3xl" data-aos="fade-up">
-                <h3 class="text-2xl font-bold mb-2">Performance Site</h3>
-                <div class="text-4xl font-800 mb-6">$2,900<span class="text-sm font-normal text-gray-400"> /starting</span></div>
-                <ul class="space-y-4 text-gray-400 mb-10">
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Custom UI/UX Design</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Rapid 14-Day Delivery</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Fully SEO Optimized</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Mobile-First Architecture</li>
-                </ul>
-                <a href="contact.html" class="block text-center py-4 glass rounded-xl font-bold hover:bg-white/10 transition">Choose Basic</a>
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h1 class="text-5xl font-800 mb-6">Invest in <span class="text-blue-500">Dominance.</span></h1>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">Transparent pricing for high-performance assets. We build digital infrastructures that work as hard as you do. Every plan includes our 14-day rapid launch promise.</p>
             </div>
 
-            <div class="glass p-10 rounded-3xl card-popular relative" data-aos="fade-up" data-aos-delay="100">
-                <div class="absolute -top-4 right-8 bg-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Most Popular</div>
-                <h3 class="text-2xl font-bold mb-2">Authority Brand</h3>
-                <div class="text-4xl font-800 mb-6">$4,500<span class="text-sm font-normal text-gray-400"> /starting</span></div>
-                <ul class="space-y-4 text-gray-400 mb-10">
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Everything in Performance</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Advanced Micro-Interactions</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> CMS Integration</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> 3 Months Premium Support</li>
-                </ul>
-                <a href="contact.html" class="block text-center py-4 bg-blue-600 rounded-xl font-bold hover:bg-blue-700 transition">Scale Now</a>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="glass p-10 rounded-[2.5rem] border-white/5" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-2">The Launch Engine</h3>
+                    <p class="text-slate-400 mb-8 text-sm italic">Perfect for local innovators ready for growth.</p>
+                    <div class="text-5xl font-800 mb-8 text-blue-500 italic">$1,400<span class="text-sm font-normal text-slate-500"> /start</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-300">
+                        <li class="flex items-center gap-3">✓ 5-Page High-Velocity Design</li>
+                        <li class="flex items-center gap-3">✓ Core Technical SEO Package</li>
+                        <li class="flex items-center gap-3">✓ Cloudflare Edge Integration</li>
+                        <li class="flex items-center gap-3">✓ Professional Copywriting Audit</li>
+                        <li class="flex items-center gap-3">✓ 24/7 Monitoring & Support</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center py-4 glass rounded-2xl font-bold hover:bg-white/10 transition uppercase tracking-widest text-sm">Select Engine</a>
+                </div>
+
+                <div class="glass p-10 rounded-[2.5rem] border-blue-500/30 relative" data-aos="fade-left">
+                    <div class="absolute -top-4 right-10 bg-blue-600 px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em]">High Authority</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">The Market Dominator</h3>
+                    <p class="text-slate-400 mb-8 text-sm italic">For businesses scaling to a national level.</p>
+                    <div class="text-5xl font-800 mb-8 text-white italic">$2,500<span class="text-sm font-normal text-slate-500"> /start</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-300">
+                        <li class="flex items-center gap-3 font-bold text-blue-400 italic">✓ Everything in Launch Engine</li>
+                        <li class="flex items-center gap-3">✓ Advanced Conversion Mapping</li>
+                        <li class="flex items-center gap-3">✓ CMS Integration for Custom Blog</li>
+                        <li class="flex items-center gap-3">✓ National SEO Keyword Strategy</li>
+                        <li class="flex items-center gap-3">✓ 3 Months Performance Consulting</li>
+                        <li class="flex items-center gap-3">✓ Premium Micro-Interactions</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center py-4 bg-blue-600 rounded-2xl font-bold hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-2xl shadow-blue-600/30 uppercase tracking-widest text-sm">Claim Authority</a>
+                </div>
             </div>
         </div>
     </section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init();
+        document.getElementById('menu-btn').onclick = () => document.getElementById('mobile-sidebar').classList.add('mobile-menu-open');
+        document.getElementById('close-btn').onclick = () => document.getElementById('mobile-sidebar').classList.remove('mobile-menu-open');
+    </script>
 </body>
 </html>
