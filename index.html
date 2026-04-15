@@ -3,66 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variant Media Group | High-Performance Web Design</title>
+    <title>Variant Media Group | High-Velocity Web Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .text-gradient { background: linear-gradient(to right, #60a5fa, #3b82f6, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: radial-gradient(circle at top right, #0f172a, #020617); color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #60a5fa, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        .mobile-menu-open { transform: translateX(0) !important; }
     </style>
 </head>
-<body class="text-gray-100 overflow-x-hidden">
+<body class="overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 glass py-4">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-800 tracking-tighter">VARIANT<span class="text-blue-500">MEDIA</span></a>
+    <nav class="fixed w-full z-50 glass py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-800 tracking-tighter uppercase">VARIANT<span class="text-blue-500">MEDIA</span></a>
+            
             <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-widest">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="index.html" class="text-blue-400">Home</a>
                 <a href="about.html" class="hover:text-blue-400 transition">About</a>
                 <a href="pricing.html" class="hover:text-blue-400 transition">Pricing</a>
                 <a href="contact.html" class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-700 transition">Book a Call</a>
             </div>
+
+            <button id="menu-btn" class="md:hidden text-blue-500 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
     </nav>
 
-    <section class="min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-5xl mx-auto px-6 text-center" data-aos="zoom-out-up">
-            <div class="inline-block px-4 py-1 mb-6 border border-blue-500/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold">
-                HIGH-SPEED WEB ENGINEERING
+    <div id="mobile-sidebar" class="fixed inset-0 bg-slate-900 z-[60] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="close-btn" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="text-blue-500">Book a Call</a>
+    </div>
+
+    <section class="relative min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <div class="inline-block px-4 py-1 mb-6 border border-blue-500/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold uppercase">Engineering the Future</div>
+                <h1 class="text-5xl md:text-7xl font-800 mb-8 leading-tight">Websites that <span class="text-gradient">Convert</span> While You Sleep.</h1>
+                <p class="text-lg text-slate-400 mb-10 leading-relaxed">Stop losing leads to outdated designs. Variant Media Group engineers high-speed, SEO-dominant digital assets for businesses ready to dominate their local and national markets. Our 14-day delivery cycle is built for speed, precision, and results.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="contact.html" class="px-8 py-4 bg-blue-600 rounded-xl font-bold hover:scale-105 transition shadow-lg shadow-blue-600/20 text-center">Start Your Project</a>
+                    <a href="pricing.html" class="px-8 py-4 glass rounded-xl font-bold hover:bg-white/10 transition text-center">View Packages</a>
+                </div>
             </div>
-            <h1 class="text-6xl md:text-8xl font-800 mb-8 leading-tight">
-                Stand out from the <span class="text-gradient">crowd.</span>
-            </h1>
-            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-                We build high-performance, high-tech digital experiences for businesses that refuse to settle for "standard." Hands-off for you, high-impact for them.
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="contact.html" class="px-8 py-4 bg-blue-600 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-blue-600/20">Schedule Consultation</a>
-                <a href="pricing.html" class="px-8 py-4 glass rounded-xl font-bold text-lg hover:bg-white/10 transition">View Packages</a>
+            <div class="relative" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Tech Dashboard" class="rounded-3xl shadow-2xl border border-white/10 opacity-80">
+                <div class="absolute -bottom-6 -left-6 glass p-6 rounded-2xl hidden md:block">
+                    <p class="text-blue-400 font-bold text-2xl">99.9%</p>
+                    <p class="text-xs uppercase tracking-widest text-slate-400">Uptime Reliability</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
-            <div data-aos="fade-up">
-                <h3 class="text-5xl font-800 text-blue-500 mb-2">14 Days</h3>
-                <p class="text-gray-400 font-semibold uppercase">Rapid Launch Cycle</p>
+    <section class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-800 mb-4 text-white uppercase tracking-tighter">The Variant <span class="text-blue-500">Methodology</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">We don't just build websites; we build revenue-generating systems. Here is why 100+ businesses have chosen us.</p>
             </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-5xl font-800 text-blue-500 mb-2">100%</h3>
-                <p class="text-gray-400 font-semibold uppercase">Bespoke Architecture</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-5xl font-800 text-blue-500 mb-2">∞</h3>
-                <p class="text-gray-400 font-semibold uppercase">Hands-Off Support</p>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-500 mb-6 text-3xl font-bold italic">01</div>
+                    <h3 class="text-xl font-bold mb-4">SEO Dominance</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">We architect your site for Google’s crawlers from day one. Proper H-tags, lightning speed, and semantic HTML ensure you rank above competitors.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-500 mb-6 text-3xl font-bold italic">02</div>
+                    <h3 class="text-xl font-bold mb-4">Behavioral UX</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Our designs are mapped to user behavior. We place calls-to-action (CTAs) in the exact spots where users are most likely to click.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-500 mb-6 text-3xl font-bold italic">03</div>
+                    <h3 class="text-xl font-bold mb-4">Edge Infrastructure</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Hosted on Cloudflare’s global edge network, your site loads in milliseconds globally, reducing bounce rates and improving quality scores.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-blue-500 mb-6 text-3xl font-bold italic">04</div>
+                    <h3 class="text-xl font-bold mb-4">Scalability</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">As you grow, your site grows. Our code is modular and clean, allowing for easy expansion into e-commerce or client portals.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('mobile-sidebar');
+
+        menuBtn.addEventListener('click', () => { sidebar.classList.add('mobile-menu-open'); });
+        closeBtn.addEventListener('click', () => { sidebar.classList.remove('mobile-menu-open'); });
+    </script>
 </body>
 </html>
